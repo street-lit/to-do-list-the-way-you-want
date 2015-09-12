@@ -37,7 +37,7 @@ class View
   end
 
   def edit_todo
-    puts "What To-Do would you like to edit?"
+    puts "What To-Do name would you like to edit?"
     print "Please enter its corresponding number > "
     input = gets.chomp.to_i
     @todo = Todo.find(input)
@@ -50,6 +50,26 @@ class View
     @todo.name = new_name
     @todo.save!
     puts "You renamed the To-Do - #{old_name} - to #{@todo.name}"
+  end
+
+  def complete_todo
+    puts "What To-Do would you like to mark as completed?"
+    print "Please enter its corresponding number > "
+    input = gets.chomp.to_i
+    @todo = Todo.find(input)
+    puts "You chose the To-Do:"
+    todo_name = @todo.name
+    puts "#{todo_name}\n"
+    puts "Is this To-Do complete? "
+    print "Please enter y/n > "
+    complete = gets.chomp.downcase
+    if complete == "y" || complete == "yes"
+      @todo.complete = true
+      @todo.save!
+      puts "The task #{todo_name} was marked as completed."
+    else
+      puts "The task #{todo_name} was NOT marked as completed."
+    end
   end
 end
 
