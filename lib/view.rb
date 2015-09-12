@@ -40,7 +40,16 @@ class View
     puts "What To-Do would you like to edit?"
     print "Please enter its corresponding number > "
     input = gets.chomp.to_i
-    puts "You chose #{input}"
+    @todo = Todo.find(input)
+    puts "You chose the To-Do:"
+    old_name = @todo.name
+    puts "#{old_name}\n"
+    puts "What would you like to re-name this To-Do to? "
+    print "New name > "
+    new_name = gets.chomp
+    @todo.name = new_name
+    @todo.save!
+    puts "You renamed the To-Do - #{old_name} - to #{@todo.name}"
   end
 end
 
