@@ -14,4 +14,6 @@ elsif input == 2
   view.edit_todo
 elsif input == 3
   view.complete_todo
+elsif input == 4
+  view.delete_todo
 end

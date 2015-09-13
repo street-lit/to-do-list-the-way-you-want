@@ -7,10 +7,6 @@ class View
     @todolist = []
   end
 
-  def show_todos
-
-  end
-
   def start
     puts "\n"
     puts "-"*30
@@ -66,9 +62,28 @@ class View
     if complete == "y" || complete == "yes"
       @todo.complete = true
       @todo.save!
-      puts "The task #{todo_name} was marked as completed."
+      puts "The To-Do - #{todo_name} - was marked as completed."
     else
-      puts "The task #{todo_name} was NOT marked as completed."
+      puts "The To-Do - #{todo_name} - was NOT marked as completed."
+    end
+  end
+
+  def delete_todo
+    puts "What To-Do would you like to delete?"
+    print "Please enter its corresponding number > "
+    input = gets.chomp.to_i
+    @todo = Todo.find(input)
+    puts "You chose the To-Do:"
+    todo_name = @todo.name
+    puts "#{todo_name}\n"
+    puts "Are you sure you want to delete the To-Do: #{todo_name}? "
+    print "Please enter y/n > "
+    complete = gets.chomp.downcase
+    if complete == "y" || complete == "yes"
+      @todo.destroy
+      puts "The To-Do - #{todo_name} - was deleted."
+    else
+      puts "The To-Do - #{todo_name} - was NOT deleted."
     end
   end
 end
