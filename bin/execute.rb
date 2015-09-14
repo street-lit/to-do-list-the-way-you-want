@@ -20,6 +20,7 @@ loop do
     when 4
       view.delete_todo
     else
+      system('clear')
       exit
   end
 end

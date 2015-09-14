@@ -4,7 +4,7 @@ require_relative '../lib/todo'
 class View
 
   def initialize
-    @todolist = []
+    @todolist = [] # Currently not being used by any methods
   end
 
   def show_todos
@@ -70,7 +70,7 @@ class View
     new_name = gets.chomp
     @todo.name = new_name
     @todo.save!
-    puts "You renamed the To-Do - #{old_name} - to - #{@todo.name}"
+    puts "You renamed the To-Do - #{old_name} - to - #{new_name}"
   end
 
   def complete_todo
@@ -88,8 +88,10 @@ class View
       @todo.complete = true
       @todo.save!
       puts "The To-Do - #{todo_name} - was marked as completed."
+      system('sleep 2')
     else
       puts "The To-Do - #{todo_name} - was NOT marked as completed."
+      system('sleep 2')
     end
   end
 
@@ -107,8 +109,10 @@ class View
     if complete == "y" || complete == "yes"
       @todo.destroy
       puts "The To-Do - #{todo_name} - was deleted."
+      system('sleep 2')
     else
       puts "The To-Do - #{todo_name} - was NOT deleted."
+      system('sleep 2')
     end
   end
 end
