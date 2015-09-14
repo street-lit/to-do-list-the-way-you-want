@@ -1,30 +1,20 @@
-This folder structure should be suitable for starting a project that uses a database:
-
-* Fork this repo
-* Clone this repo
-* Run `bundle install` to install `active_record`
-* `rake generate:migration <NAME>` to create a migration (Don't include the `<` `>` in your name, it should also start with a capital)
-* `rake db:migrate` to run the migration and update the database
-* Create models in lib that subclass `ActiveRecord::Base`
-* ... ?
-* Profit
-
-
-## Rundown
-
-```
-.
-├── Gemfile             # Details which gems are required by the project
-├── README.md           # This file
-├── Rakefile            # Defines `rake generate:migration` and `db:migrate`
-├── config
-│   └── database.yml    # Defines the database config (e.g. name of file)
-├── console.rb          # `ruby console.rb` starts `pry` with models loaded
-├── db
-│   ├── dev.sqlite3     # Default location of the database file
-│   ├── migrate         # Folder containing generated migrations
-│   └── setup.rb        # `require`ing this file sets up the db connection
-└── lib                 # Your ruby code (models, etc.) should go here
-    └── all.rb          # Require this file to auto-require _all_ `.rb` files in `lib`
-```
 # to-do-list-the-way-you-want
+
+This application seeks to help one organize their tasks: it allows the user to create, edit, mark as complete and delete To-Do's and presents the To-Do's in a visually simple manner.
+
+## Installation
+In order to install this application, the user should fork this repo and then clone this repo using the git command `git clone <clone url>` in the respective folder that they prefer.
+
+## Running 'to-do-list-the-way-you-want'
+
+* In order to run  the application, from the root folder run the command `ruby bin/execute.rb`
+* While running the application a user may select from four options of how to interact with the To-Do's. They may:
+
+* Create a new To-Do
+* Edit an existing To-Do
+* Mark an existing To-Do as complete
+* Delete an existing To-Do
+
+## Closing 'to-do-list-the-way-you-want'
+
+In order to exit from the application, during the action select screen, the user may enter any key (other than 1, 2, 3, or 4) and the application will exit.
