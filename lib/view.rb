@@ -9,8 +9,8 @@ class View
 
   def show_todos
     @todolistview = []
-    Todo.find_each do |score|
-      @todolistview.push(score)
+    Todo.find_each do |todo|
+      @todolistview.push(todo)
     end
 
     if @todolistview.size > 0
@@ -71,6 +71,7 @@ class View
     @todo.name = new_name
     @todo.save!
     puts "You renamed the To-Do - #{old_name} - to - #{new_name}"
+    system('sleep 2')
   end
 
   def complete_todo
@@ -88,11 +89,10 @@ class View
       @todo.complete = true
       @todo.save!
       puts "The To-Do - #{todo_name} - was marked as completed."
-      system('sleep 2')
     else
       puts "The To-Do - #{todo_name} - was NOT marked as completed."
-      system('sleep 2')
     end
+    system('sleep 2')
   end
 
   def delete_todo
@@ -109,11 +109,10 @@ class View
     if complete == "y" || complete == "yes"
       @todo.destroy
       puts "The To-Do - #{todo_name} - was deleted."
-      system('sleep 2')
     else
       puts "The To-Do - #{todo_name} - was NOT deleted."
-      system('sleep 2')
     end
+    system('sleep 2')
   end
 end
 
