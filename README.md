@@ -10,10 +10,10 @@ In order to install this application, the user should fork this repo and then cl
 * In order to run  the application, from the root folder run the command `ruby bin/execute.rb`
 * While running the application a user may select from four options of how to interact with the To-Do's. They may:
 
-* Create a new To-Do
-* Edit an existing To-Do
-* Mark an existing To-Do as complete
-* Delete an existing To-Do
+    * Create a new To-Do
+    * Edit an existing To-Do
+    * Mark an existing To-Do as complete
+    * Delete an existing To-Do
 
 ## Closing 'to-do-list-the-way-you-want'
 
