@@ -63,14 +63,14 @@ class View
     input = gets.chomp.to_i
     @todo = Todo.find(input)
     puts "You chose the To-Do: "
-    old_name = @todo.name
-    print "#{old_name}\n"
+    todo_name = @todo.name
+    print "#{todo_name}\n"
     puts "What would you like to re-name this To-Do to? "
     print "New name > "
     new_name = gets.chomp
     @todo.name = new_name
     @todo.save!
-    puts "You renamed the To-Do - #{old_name} - to - #{new_name}"
+    puts "You renamed the To-Do - #{todo_name} - to - #{new_name}"
     system('sleep 2')
   end
 
